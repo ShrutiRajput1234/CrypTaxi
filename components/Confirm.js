@@ -1,7 +1,13 @@
 import RideSelector from './RideSelector'
-import { useContext } from 'react'
-import { UberContext } from '../context/uberContext'
-import { ethers } from 'ethers'
+import {
+  useContext
+} from 'react'
+import {
+  UberContext
+} from '../context/uberContext'
+import {
+  ethers
+} from 'ethers'
 
 const style = {
   wrapper: `flex-1 h-full flex flex-col justify-between`,
@@ -40,36 +46,50 @@ const Confirm = () => {
 
       await metamask.request({
         method: 'eth_sendTransaction',
-        params: [
-          {
-            from: currentAccount,
-            to: process.env.NEXT_PUBLIC_UBER_ADDRESS,
-            gas: '0x7EF40', // 520000 Gwei
-            value: ethers.utils.parseEther(price)._hex,
-          },
-        ],
+        params: [{
+          from: currentAccount,
+          to: process.env.NEXT_PUBLIC_UBER_ADDRESS,
+          gas: '0x7EF40', // 520000 Gwei
+          value: ethers.utils.parseEther(price)._hex,
+        }, ],
       })
     } catch (error) {
       console.error(error)
     }
   }
 
-  return (
-    <div className={style.wrapper}>
-      <div className={style.rideSelectorContainer}>
-        {pickupCoordinates && dropoffCoordinates && <RideSelector />}
-      </div>
-      <div className={style.confirmButtonContainer}>
-        <div className={style.confirmButtonContainer}>
-          <div
-            className={style.confirmButton}
-            onClick={() => storeTripDetails(pickup, dropoff)}
-          >
-            Confirm {selectedRide.service || 'UberX'}
-          </div>
-        </div>
-      </div>
-    </div>
+  return ( <
+    div className = {
+      style.wrapper
+    } >
+    <
+    div className = {
+      style.rideSelectorContainer
+    } > {
+      pickupCoordinates && dropoffCoordinates && < RideSelector / >
+    } <
+    /div> <
+    div className = {
+      style.confirmButtonContainer
+    } >
+    <
+    div className = {
+      style.confirmButtonContainer
+    } >
+    <
+    div className = {
+      style.confirmButton
+    }
+    onClick = {
+      () => storeTripDetails(pickup, dropoff)
+    } >
+    Confirm {
+      selectedRide.service || 'CrypTaxi'
+    } <
+    /div> <
+    /div> <
+    /div> <
+    /div>
   )
 }
 
