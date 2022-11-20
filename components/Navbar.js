@@ -13,7 +13,7 @@ const style = {
   userImageContainer: `mr-2`,
   userImage: `h-10 w-10 mr-4 rounded-full p-px object-cover cursor-pointer`,
   loginButton: `flex items-center cursor-pointer rounded-full hover:bg-[#333333] px-4 py-1`,
-  loginText: `text-black ml-2`,
+  loginText: `ml-2`,
 }
 
 const Navbar = () => {
