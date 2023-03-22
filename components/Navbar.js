@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import avatar from '../temp/avatar.jpg'
 import { BsPerson } from 'react-icons/bs'
 import { useContext } from 'react'
@@ -23,6 +24,7 @@ const Navbar = () => {
     <div className={style.wrapper}>
       <div className={style.leftMenu}>
         <div className={style.logo}>CrypTaxi</div>
+        <Link href="/support" className={style.loginText}>Support</Link>
       </div>
       <div className={style.rightMenu}>
         <div className={style.menuItem}>{currentUser.name?.split(' ')[0]}</div>
